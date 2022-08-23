@@ -53,9 +53,9 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
 end
 
-group :test do
-  gem 'rspec-rails'
-end
+# group :test do
+#   gem 'rspec-rails'
+# end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
@@ -73,4 +73,7 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'ffi'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
 end
