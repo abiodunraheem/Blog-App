@@ -241,6 +241,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capybara
+  childprocess
   debug
   ffi
   importmap-rails
