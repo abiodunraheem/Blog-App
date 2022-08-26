@@ -7,7 +7,7 @@
           <% end %>
        </ul>
     <% end %>
-  <%= f.hidden_field :author_id, value: @params ? @params['user_id'] : '' %>
+  <%= f.hidden_field :user_id, value: @params ? @params['user_id'] : '' %>
   <%= f.label :title, "Title:" %></br >
   <%= f.text_field :title, placeholder: "Article title" %>
   <%= f.label :text, "Article Description" %></br >

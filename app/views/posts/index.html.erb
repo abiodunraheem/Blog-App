@@ -4,7 +4,7 @@
 <%= render partial:'partials/post', locals: {post: post} %>
 <ul class="comments-ul">
       <% post.recent_comments.each do |comment| %>
-        <li><%= comment.author.name %>: <%= comment.text %>
+        <li><%= comment.user.name %>: <%= comment.text %>
       <% end %>
       </ul>
 <% end %>

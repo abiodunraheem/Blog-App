@@ -5,13 +5,13 @@ class CommentsController < ApplicationController
   
     def create
       @comment = Comment.new(comments_params)
-      redirect_to user_posts_path(id: @comment.post_id, user_id: @comment.author_id) if @comment.save
+      redirect_to user_posts_path(id: @comment.post_id, user_id: @comment.user_id) if @comment.save
     end
   
     private
   
     def comments_params
-      params.require(:comment).permit(:text, :post_id, :author_id)
+      params.require(:comment).permit(:text, :post_id, :user_id)
     end
   end
   
