@@ -4,9 +4,9 @@
 <%= render partial:'partials/post', locals: {post: post} %>
 <ul class="comments-ul">
       <% post.recent_comments.each do |comment| %>
-        <li><%= comment.author.name %>: <%= comment.text %>
+        <li><%= comment.user.name %>: <%= comment.text %>
       <% end %>
       </ul>
 <% end %>
 
-<button class="see-all">Pagination</button>
+<%= link_to "Add Post", new_user_post_path(@user), class: "see-all-post-btn" %>
