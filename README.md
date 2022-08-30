@@ -48,6 +48,12 @@ In your browser, go to
 - Twitter: [@abiodunraheem23](https://twitter.com/abiodunraheem23)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/abiodun-raheem)
 
+👤 **Natnail G/gorgis**
+
+- GitHub: [@NatiG25](https://github.com/NatiG25)
+- Twitter: [@NatiG87702270](https://twitter.com/NatiG87702270)
+- LinkedIn: [@Natnail](https://www.linkedin.com/in/natnailgorgis/ )
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
