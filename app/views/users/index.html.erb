@@ -1,5 +1,4 @@
-# <% @users.each do |user| %>
-#     <h2><%= user.name %></h2>
-#     <%= render partial: 'partials/user', locals: { user: user } %>
-#  <% end %>
+<% @users.each do |user| %>
+   <%= render partial: 'partials/user', locals: { user: user } %>
+ <% end %>
  
