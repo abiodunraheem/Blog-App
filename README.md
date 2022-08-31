@@ -52,7 +52,7 @@ In your browser, go to
 
 - GitHub: [@NatiG25](https://github.com/NatiG25)
 - Twitter: [@NatiG87702270](https://twitter.com/NatiG87702270)
-- LinkedIn: [@Natnail](https://www.linkedin.com/in/natnailgorgis/ )
+- LinkedIn: [@Natnail](https://www.linkedin.com/in/natnailgorgis/)
 
 ## 🤝 Contributing
 
