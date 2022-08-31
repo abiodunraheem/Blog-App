@@ -40,7 +40,7 @@ In your browser, go to
 - To run all the tests: rspec ./spec
 
 
-## Author
+## Authors
 
 👤 **Abiodun Raheem**
 
