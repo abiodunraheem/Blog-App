@@ -1,33 +1,33 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  describe 'GET #index' do
-    before(:example) { get '/users/2/posts' }
-    it 'it is a success' do
-      expect(response).to have_http_status(:ok)
+  describe 'GET /index' do
+    before(:each) do
+      @user = User.create(name: 'Integration test', photo: 'http://twitter.com', bio: 'test for User')
+      get user_posts_path(@user)
     end
 
-    it "it renders 'index' template" do
-      expect(response).to render_template('index')
+    it 'Check if response status was correct' do
+      expect(response).to have_http_status(:success)
     end
 
-    it 'it should include "Here is a list of posts for a given user" on the screen' do
-      expect(response.body).to include('Here is a list of posts for a given user')
+    it 'Check if a correct template was rendered' do
+      expect(response).to render_template(:index)
     end
   end
 
-  describe 'GET #show' do
-    before(:example) { get '/users/2/posts/2' }
-    it 'it is a success' do
-      expect(response).to have_http_status(:ok)
+  describe 'GET /show' do
+    before(:each) do
+      @user = User.create(name: 'Integration test', photo: 'http://twitter.com', bio: 'test for User')
+      @post = Post.create(user: @user, title: 'test', text: 'A test post')
+      get user_post_path(@user, @post)
+    end
+    it 'Check if response status was correct' do
+      expect(response).to have_http_status(:success)
     end
 
-    it "it renders 'show' template" do
-      expect(response).to render_template('show')
-    end
-
-    it 'it should include "Here the details of a post: Comments and Likes" on the screen' do
-      expect(response.body).to include('Here the details of a post: Comments and Likes')
+    it 'Check if a correct template was rendered' do
+      expect(response).to render_template(:show)
     end
   end
 end
