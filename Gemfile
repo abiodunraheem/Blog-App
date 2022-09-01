@@ -28,6 +28,7 @@ gem 'stimulus-rails'
 gem 'jbuilder'
 # Add gem to use devise in App
 gem 'devise'
+gem 'cancancan'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

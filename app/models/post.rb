@@ -9,11 +9,17 @@ class Post < ApplicationRecord
 
   after_save :updates_post_counter
 
+  after_save :recent_posts
+
   def updates_post_counter
     user.increment!(:posts_counter)
   end
 
   def recent_comments
     comments.limit(5).order(created_at: :desc)
+  end
+
+  def is?(requested_role)
+    ROLES == requested_role.to_s
   end
 end
