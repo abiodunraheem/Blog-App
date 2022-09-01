@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :comments, class_name: 'Comment'
   has_many :likes, class_name: 'Like'
 
-  #validates
+  # validates
   validates :name, :bio, presence: true
   validates :email, uniqueness: true
   validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
