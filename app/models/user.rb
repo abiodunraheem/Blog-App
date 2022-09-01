@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
   has_many :posts, class_name: 'Post', foreign_key: 'users'
-  has_many :comments, class_name: 'Comment'
+  has_many :comments, class_name: 'Comment', foreign_key: 'users'
   has_many :likes, class_name: 'Like'
 
   # validates
