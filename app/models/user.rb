@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
-  has_many :posts, class_name: 'Post'
+  has_many :posts, class_name: 'Post', foreign_key: 'users'
   has_many :comments, class_name: 'Comment'
   has_many :likes, class_name: 'Like'
 
