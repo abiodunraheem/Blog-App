@@ -11,11 +11,10 @@
 
 <% if can? :destroy, @post %>
   <%= button_to "Delete", user_post_path(post_id: @post.id), method: :delete, data: {
-    turbolinks: false,
+    confirm: 'Are you sure you want to delete?'
   } %>
 <% end %>
 <br />
-
 <%= form_for @like, url:post_likes_path(@post) do |f| %>
   <%= f.hidden_field :user_id, value: @post.user_id %>
   <%= f.hidden_field :post_id, value: @post.id %>
@@ -27,14 +26,16 @@
 <ul class="comments-ul">
   <% @post.recent_comments.each do |comment| %>
     <li><%= comment.user.name %>: <%= comment.text %>
-    <br/>
+    <br>
     <% if can? :destroy, comment %>
       <%= button_to "Delete", post_comment_path(id: comment.id, post_id: @post.id), method: :delete, data: {
-        turbo: false,
+        confirm: 'Are you sure you want to delete?'
       } %>
     <% end %>
   <% end %>
 </ul> 
+
+
 <h5>Add comment</h5>
 <%= form_for @comment, url:post_comments_path(@post) do |f| %>
   <%= f.hidden_field :user_id, value: @post.user.id %>

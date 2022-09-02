@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user, class_name: 'User'
-  has_many :comments
-  has_many :likes
+  has_many :comments, dependent: :destroy, class_name: 'Comment'
+  has_many :likes, dependent: :destroy, class_name: 'Like'
 
   validates :title, presence: true, length: { maximum: 250 }
   validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
@@ -9,17 +9,11 @@ class Post < ApplicationRecord
 
   after_save :updates_post_counter
 
-  after_save :recent_posts
-
   def updates_post_counter
     user.increment!(:posts_counter)
   end
 
   def recent_comments
     comments.limit(5).order(created_at: :desc)
-  end
-
-  def is?(requested_role)
-    ROLES == requested_role.to_s
   end
 end
