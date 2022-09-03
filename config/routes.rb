@@ -10,4 +10,9 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create destroy]
     resources :likes, only: %i[create]
   end
+  namespace :api do
+    namespace :v1 do
+      resources :comments, only: [:index]
+    end
+  end
 end
