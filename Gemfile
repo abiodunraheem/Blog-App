@@ -66,11 +66,12 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
   # Use to add confirmable to user
-  gem 'letter_opener'
+  gem 'letter_opener_web', '~> 2.0'
 end
 
 gem 'childprocess'
 gem 'ffi'
+
 group :test do
   gem 'capybara'
   gem 'selenium-webdriver'

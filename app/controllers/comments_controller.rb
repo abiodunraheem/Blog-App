@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
     @post = Post.find(@comment.post_id)
     flash[:success] = ['Comment Deleted Successfully']
     @comment.destroy
+    
     respond_to do |format|
       format.html { redirect_to "/users/#{current_user.id}/posts/#{@post.id}" }
       format.json { head :no_content }
